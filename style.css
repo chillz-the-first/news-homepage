@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--Very-dark-blue);
+}
+p {
+    font-size: 15px;
+}
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 2000px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+@media screen and (max-width: 850px) {
+    .container {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .container {
+        width: 80%;
+    }
+}
+
+/* Navbar Section */
+nav {
+    width: 100vw;
+    height: 100%;
+    background-color: var(--Off-white);
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 90px;
+}
+
+.menu-container {
+    margin: auto 0;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-link {
+    text-decoration: none;
+    margin: 0 0.8rem;
+    color: var(--Dark-grayish-blue);
+    font-weight: 500;
+}
+.navbar-link:hover {
+    color: var(--Soft-red);
+}
+
+li:first-of-type .navbar-link {
+    margin-left: 0;
+}
+li:last-of-type .navbar-link {
+    margin-right: 0;
+}
+
+.bar {
+    background: #000000;
+    height: 3px;
+    width: 30px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 650px) {
+    .navbar {
+        position: relative;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+        position: absolute;
+        margin: 0;
+        top: 90px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .navbar-menu.active {
+        background-color: var(--Off-white);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .navbar-link {
+        text-align: center;
+        line-height: 35px;
+        width: 100%;
+        margin: 0;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 35%;
+        right: 0%;    
+    }
+
+    .navbar-toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar-toogle:hover {
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Headlines Sections */
+.mid {
+    width: 100vw;
+    background-color: var(--Off-white);
+}
+
+.headlines {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+}
+
+.bright {
+    width: 100%;
+    height: 100%;
+}
+
+.web3 {
+    margin-bottom: 1rem;
+}
+
+.bright-txt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem 0;
+}
+.bright-txt h1 {
+    color: var(--Very-dark-blue);
+    font-weight: 800;
+    font-size: 3.5rem;
+    width: 90%;
+}
+
+.caption {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: space-between;
+}
+.caption p {   
+    margin-bottom: 1rem;
+    width: 85%;
+}
+
+button {
+    width: 50%;
+    padding: 15px 25px;
+    text-align: center;
+    border: none;
+    background-color: var(--Soft-red);
+}
+button:hover {
+    background-color: var(--Very-dark-blue);
+}
+.more {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: justify;
+    text-justify: inter-character;
+}
+
+.new-news {
+    background-color: var(--Very-dark-blue);
+    padding: 2rem 1.5rem;
+    height: 100%;
+    width: 90%;
+    justify-self: end;
+}
+.new-news h1 {
+    color: var(--Soft-orange);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.news-item {
+    margin: 1rem 0;
+    color: #fff;
+    border-bottom: 1px solid #808080;
+    padding: 1rem 0;
+}
+.news-item h3 {
+    cursor: pointer;
+}
+.news-item h3:hover {
+    color: var(--Soft-orange);
+}
+.news-item p {
+    margin: 1rem 0;
+}
+
+/* Snippets Section */
+.snippets-container {
+    width: 100vw;
+    height: 100%;
+    padding: 1rem 0;
+    background-color: var(--Off-white);
+}
+
+.news-snippets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    column-gap: 60px;
+}
+
+.snippet {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    column-gap: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.snippet-txt h1 {
+    color: var(--Grayish-blue);
+    font-weight: 800;
+    margin-top: -6px;
+    margin-bottom: 0.85rem;
+}
+.snippet-txt h3 {
+    font-weight: 700;
+    margin: 0.85rem 0;
+    cursor: pointer;
+}
+.snippet-txt h3:hover {
+    color: var(--Soft-red);
+}
+.snippet-txt p {
+    margin-top: 0.85rem;
+    width: 90%;
+}
+
+.snippet-img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+/* mobile viewport */
+@media screen and (max-width: 650px) {
+    /* Headlines Sections */
+    .headlines {
+        grid-template-columns:1fr;
+        column-gap: 0;
+    }
+
+    .web3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .bright-txt {
+    grid-template-columns: 1fr;
+    }
+    .bright-txt h1 {
+    font-size: 2.5rem;
+    width: 100%;
+    }
+
+    .caption {
+    grid-template-columns: 1fr;
+    }
+    .caption p {
+        width: 100%;
+    }
+
+    .new-news {
+        justify-self: unset;
+        width: 100%;
+    }
+    .new-news h1 {
+        margin-bottom: 1rem;
+    }
+
+    /* Snippets Section */
+    .news-snippets {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 30px;
+    }
+
+    .snippet {
+        grid-template-columns: 0.6fr 1fr;
+        column-gap: 15px;
+        align-items: center;
+    }
+
+    .snippet-txt h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    .snippet-txt h3 {
+        margin: 0.5rem 0;
+    }
+    .snippet-txt p {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+}
